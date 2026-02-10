@@ -8,6 +8,7 @@ const app = http.createServer((req, res) => {
     if(urldata.pathname==='/'){
         res.write('home page')
     }
+    
     else if(urldata.pathname === '/contact'){
         res.write('contact page')
     }
