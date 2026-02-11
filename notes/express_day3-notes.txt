@@ -1,0 +1,22 @@
+<!-- syntax for writing ejs
+     
+    1-logical code -if,looping
+
+    <% if() { %>
+
+    <%  }     %>
+
+    2-html content
+
+    <%- html content %>
+
+    3- as a text base
+
+    <%=  text content  %>
+
+    4- import one ejs into another
+
+    <%-include('filename.ejs') %>
+    
+    
+    
