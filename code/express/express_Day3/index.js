@@ -27,6 +27,7 @@ app.get('/about',(req,res)=>{
     // res.send('<h1>about</h1>')
 })
 
+
 app.get('/contact',(req,res)=>{
     res.render('contact.ejs')
 })
