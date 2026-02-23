@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // remove duplicate elemnets from an array
+        function removeDuplicates(arr) {
+            let result = [];
+
+            for (let i = 0; i < arr.length; i++) {
+                if (!result.includes(arr[i])) {
+                    result.push(arr[i]);
+                }
+            }
+
+            return result;
+        }
+
+        // multiply array elements by 2
+
+        function multiply(arr) {
+            let result = [];
+
+            for (let i = 0; i < arr.length; i++) {
+                result.push(arr[i] * 2);
+            }
+
+            return result;
+
+        }
+
+
+
+
+        let arr = [1, 2, 3, 2, 4, 1, 5];
+        console.log(removeDuplicates(arr));
+        console.log(multiply(arr));
+
+
+        // find the largest in the array
+
+        let largest = Math.max(...arr);
+        console.log(largest);
+
+        // reverse the array
+        let reverse = [];
+
+        for (let i = arr.length - 1; i >= 0; i--) {
+            reverse.push(arr[i]);
+        }
+
+        console.log(reverse);
+
+        // users with age >20
+        let users = [
+            { name: "Amit", age: 22 },
+            { name: "Rahul", age: 18 },
+            { name: "Sneha", age: 25 }
+        ];
+
+        let result = users.filter(user => user.age > 20);
+
+        console.log(result);
+
+
+        // Count how many times a number appears in an array
+        let target = 2;
+
+        let count = 0;
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === target) {
+                count++;
+            }
+        }
+
+        console.log("Count:", count);
+        // op= 2
+
+
+        // Flatten this array
+        let arr1 = [1, 2, [3, 4], [5, [6, 7]]];
+
+        let flattened = arr1.flat(1);
+
+        console.log(flattened);
+
+
+        // Rotate array by 1 position to the right.
+        let last = arr.pop();
+        arr.unshift(last);
+
+        console.log(arr);
+
+        // SECTION 2
+
+        // REVERSE THE STRING
+        const str = 'hello'
+        const str1 = 'mom'
+
+        function reverseString(str) {
+            let reversed = "";
+            for (let i = str.length - 1; i >= 0; i--) {
+                reversed += str[i];
+            }
+            return reversed;
+        }
+
+        console.log(reverseString(str));
+
+        // string Palindrome
+        function isPalindrome(str) {
+            let rev = "";
+            for (let i = str.length - 1; i >= 0; i--) {
+                rev += str[i];
+            }
+            return str === rev;
+        }
+
+        console.log(isPalindrome(str1));
+        console.log(isPalindrome(str));
+
+
+        function Vowels(str) {
+            let count = 0;
+            let vowels = "aeiouAEIOU";
+
+            for (let char of str) {
+                if (vowels.includes(char)) {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        console.log(Vowels(str));
+
+
+        // find first non repeating character
+        function NonRepeatingChar(str) {
+            for (let char of str) {
+                if (str.indexOf(char) === str.lastIndexOf(char)) {
+                    return char;
+                }
+            }
+            return null;
+        }
+        console.log(NonRepeatingChar(str));
+
+        function capitalize(str) {
+            return str.split(" ").map(word =>
+                word.charAt(0).toUpperCase() + word.slice(1)
+            )
+                .join(" ");
+        }
+
+        console.log(capitalize(str));
+
+        // remove all spaces
+        function removeAllSpaces(str) {
+            return str.replace(/\s+/g, "").trim();
+        }
+
+        console.log(removeAllSpaces("   hello world   "));
+
+        // Count how many times a word appears in a sentence.
+        function countWord(sentence, word) {
+            return sentence
+                .split(" ")
+                .filter(w => w === word)
+                .length;
+        }
+
+        console.log(countWord("hello world hello", "hello"));
+
+
+
+    </script>
+</head>
+
+<body>
+    <h1>HOME PAGE</h1>
+    <hr>
+</body>
+
+</html>

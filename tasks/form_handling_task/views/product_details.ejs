@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Details Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 40px 20px; /* 👈 spacing from screen */
+        }
+
+        .form-container {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto; /* 👈 center horizontally */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 6px rgba(102,126,234,0.4);
+        }
+
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .btn-submit {
+            margin-top: 30px;
+            width: 100%;
+            padding: 12px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: #5563c1;
+        }
+
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .full-width {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Product Details Form</h2>
+
+        <form action="/saveform" method="post" >
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input type="text" id="productname" name="productname" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Product ID</label>
+                    <input type="text" id="productId" name="productId">
+                </div>
+
+                <div class="form-group">
+                    <label for="p_category">Category</label>
+                    <select id="p_category" name="p_category">
+                        <option>Select Category</option>
+                        <option>Electronics</option>
+                        <option>Clothing</option>
+                        <option>Furniture</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Brand</label>
+                    <input type="text" id="brand" name="brand">
+                </div>
+
+                <div class="form-group">
+                    <label>Price</label>
+                    <input type="number" id="price" name="price">
+                </div>
+
+                <div class="form-group">
+                    <label>Discount (%)</label>
+                    <input type="number" id="discount" name="discount">
+                </div>
+
+                <div class="form-group">
+                    <label>Stock Quantity</label>
+                    <input type="number" id="stock" name="stock">
+                </div>
+
+                <div class="form-group">
+                    <label>SKU</label>
+                    <input type="text" id="sku" name="sku">
+                </div>
+
+                <div class="form-group">
+                    <label>Weight (kg)</label>
+                    <input type="number" id="weight" name="weight">
+                </div>
+
+                <div class="form-group">
+                    <label>Color</label>
+                    <input type="text" id="color" name="color">
+                </div>
+
+                <div class="form-group">
+                    <label>Size</label>
+                    <input type="text" id="size" name="size">
+                </div>
+
+                <div class="form-group">
+                    <label>Manufacturing Date</label>
+                    <input type="date" id="m_date" name="m_date">
+                </div>
+
+                <div class="form-group">
+                    <label>Expiry Date</label>
+                    <input type="date" id="e_date" name="e_date">
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="p_des">Product Description</label>
+                    <textarea id="p_des" name="p_des"></textarea>
+                </div>
+
+            </div>
+
+            <button type="submit" class="btn-submit">Submit Product</button>
+        </form>
+    </div>
+
+</body>
+</html>
