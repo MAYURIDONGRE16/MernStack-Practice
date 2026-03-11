@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Table</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        thead {
+            background: #007bff;
+            color: white;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background: #f1f1f1;
+        }
+
+        th {
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <a href="/"><button>Add Product</button></a>
+    <div class="container">
+
+        <h2>Product Details</h2>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Product Quantity</th>
+                    <th>Product In Stock</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <%data.map((val,index)=>{%>
+
+                    <tr>
+                        <td><%-val.productName%></td>
+                        <td><%-val.productPrice%></td>
+                        <td><%-val.productQuantity%></td>
+                        <td style="font-weight: bold;"><%-val.productInStock==="Yes" ? "In Stock" : "Out Of Stock"%></td>
+                        <td ><a onclick="return window.confirm('are you sure')" href="/delete-product/<%-val._id%>">
+                            <i class="fa fa-trash" style="font-weight: bold;"></i></a>
+                        </td>
+
+                    </tr>
+
+
+                    <%})%>
+
+                    <% if(data.length <=0){%>
+                        <tr>
+                            <td colspan="5" style=" text-align: center;font-weight: bold;">No products found</td>
+                        </tr>
+                        <%}%>
+            </tbody>
+
+        </table>
+
+    </div>
+
+</body>
+
+</html>
