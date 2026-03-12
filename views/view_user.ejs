@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User Data Table</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            padding: 40px;
+        }
+
+        .table-container {
+            width: 80%;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #405cf5;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e9ecef;
+        }
+
+        button {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .edit {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .delete {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="table-container">
+
+        <a href="/"><button>Go to Login</button></a>
+
+        <h2>User Data</h2>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <%data.map((val,index)=>{%>
+                    <tr>
+                        <td><%-val._id%></td>
+                        <td><%-val.userName%></td>
+                        <td><%-val.userEmail%></td>
+                        <td><%-val.userPass%></td>
+                        <td>
+                            <a href="/delete-user/<%-val._id%>"><button class="delete">Delete</button></a>
+                            <a href="/edit-user/<%-val._id%>"><button class="edit">Edit</button></a>
+                        </td>
+                    </tr>
+
+
+                    <%})%>
+            </tbody>
+
+        </table>
+
+    </div>
+
+</body>
+
+</html>

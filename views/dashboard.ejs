@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Instagram Dashboard</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #fafafa;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        /* Sidebar */
+
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            border-right: 1px solid #ddd;
+            padding: 25px;
+            position: fixed;
+            background: white;
+        }
+
+        .logo {
+            margin-bottom: 40px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            padding: 15px 0;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Main */
+
+        .main {
+            margin-left: 260px;
+            width: 55%;
+            padding: 20px;
+        }
+
+        /* Topbar */
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .topbar input {
+            padding: 8px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .profile {
+            border-radius: 50%;
+        }
+
+        /* Stories */
+
+        .stories {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .story {
+            text-align: center;
+        }
+
+        .story img {
+            border-radius: 50%;
+            border: 3px solid #ff0066;
+        }
+
+        /* Post */
+
+        .post {
+            background: white;
+            border: 1px solid #ddd;
+            margin-bottom: 25px;
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .post-header img {
+            border-radius: 50%;
+        }
+
+        .post-img {
+            width: 100%;
+        }
+
+        .post-actions {
+            display: flex;
+            gap: 20px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .post p {
+            padding: 0 10px 10px;
+        }
+
+        /* Right Sidebar */
+
+        .rightbar {
+            width: 25%;
+            padding: 20px;
+        }
+
+        .suggestion {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .suggestion img {
+            border-radius: 50%;
+        }
+
+        button {
+            background: #0095f6;
+            border: none;
+            padding: 5px 10px;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Sidebar -->
+
+        <div class="sidebar">
+
+            <h2 class="logo">Instagram</h2>
+
+            <ul>
+                <li>Home</li>
+                <li>Search</li>
+                <li>Explore</li>
+                <li>Messages</li>
+                <li>Notifications</li>
+                <li>Create</li>
+                <li>Profile</li>
+            </ul>
+
+        </div>
+
+
+        <!-- Main Feed -->
+
+        <div class="main">
+
+            <!-- Topbar -->
+
+            <div class="topbar">
+
+                <input type="text" placeholder="Search">
+
+                <img src="https://i.pravatar.cc/40" class="profile">
+
+            </div>
+
+
+            <!-- Stories -->
+
+            <div class="stories">
+
+                <div class="story">
+                    <img src="https://i.pravatar.cc/60?img=1">
+                    <p>Rahul</p>
+                </div>
+
+                <div class="story">
+                    <img src="https://i.pravatar.cc/60?img=2">
+                    <p>Anita</p>
+                </div>
+
+                <div class="story">
+                    <img src="https://i.pravatar.cc/60?img=3">
+                    <p>Rohan</p>
+                </div>
+
+                <div class="story">
+                    <img src="https://i.pravatar.cc/60?img=4">
+                    <p>Priya</p>
+                </div>
+
+            </div>
+
+
+            <!-- Post -->
+
+            <div class="post">
+
+                <div class="post-header">
+
+                    <img src="https://i.pravatar.cc/40?img=5">
+                    <span>mayuri</span>
+
+                </div>
+
+                <img src="https://picsum.photos/500/350" class="post-img">
+
+                <div class="post-actions">
+
+                    <span>❤️ Like</span>
+                    <span>💬 Comment</span>
+                    <span>📤 Share</span>
+
+                </div>
+
+                <p><b>mayuri</b> Beautiful day 🌸</p>
+
+            </div>
+
+
+            <div class="post">
+
+                <div class="post-header">
+
+                    <img src="https://i.pravatar.cc/40?img=6">
+                    <span>rahul</span>
+
+                </div>
+
+                <img src="https://picsum.photos/500/351" class="post-img">
+
+                <div class="post-actions">
+
+                    <span>❤️ Like</span>
+                    <span>💬 Comment</span>
+                    <span>📤 Share</span>
+
+                </div>
+
+                <p><b>rahul</b> Weekend vibes 😎</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Right Sidebar -->
+
+        <div class="rightbar">
+
+            <h3>Suggestions</h3>
+
+            <div class="suggestion">
+
+                <img src="https://i.pravatar.cc/40?img=8">
+                <span>rohit</span>
+                <button>Follow</button>
+
+            </div>
+
+            <div class="suggestion">
+
+                <img src="https://i.pravatar.cc/40?img=9">
+                <span>megha</span>
+                <button>Follow</button>
+
+            </div>
+
+            <div class="suggestion">
+
+                <img src="https://i.pravatar.cc/40?img=10">
+                <span>aditya</span>
+                <button>Follow</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
