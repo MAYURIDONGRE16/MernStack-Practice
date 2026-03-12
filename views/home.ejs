@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Registration Form</title>
+
+<style>
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg,#4facfe,#00f2fe);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0;
+}
+
+.form-container{
+    background:#fff;
+    padding:30px;
+    width:350px;
+    border-radius:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.form-container h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+label{
+    display:block;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+input, select{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:14px;
+}
+
+input:focus, select:focus{
+    outline:none;
+    border-color:#4facfe;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    background:#4facfe;
+    color:#fff;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#007bff;
+}
+</style>
+
+</head>
+
+<body>
+    
+
+<div class="form-container">
+    <a href="/view-products"><button>View Products</button></a>
+<h2>Product Registration</h2>
+
+<form action="/submit-product" method="post">
+
+<div class="form-group">
+<label for="productName">Product Name</label>
+<input type="text" id="productName" name="productName" placeholder="Enter product name">
+</div>
+
+<div class="form-group">
+<label for="productPrice">Product Price</label>
+<input type="number" id="productPrice" name="productPrice" placeholder="Enter price">
+</div>
+
+<div class="form-group">
+<label for="productQuantity">Product Quantity</label>
+<input type="number" id="productQuantity" name="productQuantity" placeholder="Enter quantity">
+</div>
+
+<div class="form-group">
+<label for="productInStock">Product In Stock</label>
+<select id="productInStock" name="productInStock">
+<option value="">Select</option>
+<option value="Yes">Yes</option>
+<option value="No">No</option>
+</select>
+</div>
+
+<button type="submit">Register Product</button>
+
+</form>
+</div>
+
+</body>
+</html>

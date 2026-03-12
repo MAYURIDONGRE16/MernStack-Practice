@@ -1,7 +1,11 @@
 const mongoose=require('mongoose')
 const connection=async()=>{
     try{
+
         await mongoose.connect('mongodb://localhost:27017/userdb')
+
+        await mongoose.connect('mongodb://localhost:27017/productdb')
+
         console.log('db connected successfully')
         console.log(mongoose.connection.readyState)
     }catch(err){
